@@ -126,7 +126,7 @@ describe("Slice 2: Unlocking & Rendering Producers", function () {
       expect(data.producers[2].unlocked).to.equal(false);
     });
 
-    xit("does not set `unlocked` to `false` once a producer has been unlocked, even if the coffee count drops again", function () {
+    it("does not set `unlocked` to `false` once a producer has been unlocked, even if the coffee count drops again", function () {
       data.coffee = 100;
       code.unlockProducers(data.producers, data.coffee);
       data.coffee = 0;
@@ -150,7 +150,7 @@ describe("Slice 2: Unlocking & Rendering Producers", function () {
       };
     });
 
-    xit("returns an array of producer objects", function () {
+    it("returns an array of producer objects", function () {
       const results = code.getUnlockedProducers(data);
       expect(results).to.be.an("array");
       results.forEach((element) => {
