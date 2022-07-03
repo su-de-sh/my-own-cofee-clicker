@@ -28,7 +28,7 @@ function unlockProducers(producers, coffeeCount) {
 
 function getUnlockedProducers(data) {
   return data.producers.filter((element) => {
-    element.unlocked;
+    return element.unlocked;
   });
 }
 

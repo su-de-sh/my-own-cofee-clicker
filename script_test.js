@@ -161,7 +161,7 @@ describe("Slice 2: Unlocking & Rendering Producers", function () {
       });
     });
 
-    xit("filters out producer objects which are not unlocked", function () {
+    it("filters out producer objects which are not unlocked", function () {
       let results = code.getUnlockedProducers(data);
       expect(results).to.have.lengthOf(1);
 
@@ -171,7 +171,7 @@ describe("Slice 2: Unlocking & Rendering Producers", function () {
       expect(results).to.have.lengthOf(2);
     });
 
-    xit("does not mutate the data", function () {
+    it("does not mutate the data", function () {
       const snapshot = JSON.stringify(data);
       code.getUnlockedProducers(data);
       expect(JSON.stringify(data)).to.equal(snapshot);
