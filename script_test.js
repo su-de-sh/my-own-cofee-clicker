@@ -368,7 +368,7 @@ describe("Slice 2: Unlocking & Rendering Producers", function () {
       };
     });
 
-    xit("updates the dom to reflect any newly unlocked producers", function () {
+    it("updates the dom to reflect any newly unlocked producers", function () {
       code.clickCoffee(data);
       const producerContainer = document.getElementById("producer_container");
       expect(producerContainer.childNodes.length).to.be.equal(2);
