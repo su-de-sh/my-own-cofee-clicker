@@ -27,6 +27,7 @@ function unlockProducers(producers, coffeeCount) {
 }
 
 function getUnlockedProducers(data) {
+  unlockProducers(data.producers, data.coffee);
   return data.producers.filter((element) => {
     return element.unlocked;
   });
@@ -69,8 +70,15 @@ function deleteAllChildNodes(parent) {
 }
 
 function renderProducers(data) {
-  // your code here
+  let producer = document.querySelector("#producer_container");
+  deleteAllChildNodes(producer);
+  const producers = getUnlockedProducers(data);
+  producers.forEach((element) => {
+    producer.appendChild(makeProducerDiv(element));
+  });
 }
+
+// your code here
 
 /**************
  *   SLICE 3

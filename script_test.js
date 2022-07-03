@@ -284,7 +284,7 @@ describe("Slice 2: Unlocking & Rendering Producers", function () {
     });
 
     // We're giving you a big hint, here
-    xit("calls document.getElementById() or document.querySelector()", function () {
+    it("calls document.getElementById() or document.querySelector()", function () {
       const spyOnGetElementById = sinon.spy(document, "getElementById");
       const spyOnQuerySelector = sinon.spy(document, "querySelector");
       code.renderProducers(data);
@@ -296,7 +296,7 @@ describe("Slice 2: Unlocking & Rendering Producers", function () {
     });
 
     // Big hint: don't just render blank divs; we've written the makeProdcuerDiv function for you, which should be called, here.
-    xit("appends some producer div elements to the producer container", function () {
+    it("appends some producer div elements to the producer container", function () {
       code.renderProducers(data);
       const producerContainer = document.getElementById("producer_container");
       // Did you generate the right number of child nodes?
@@ -307,21 +307,21 @@ describe("Slice 2: Unlocking & Rendering Producers", function () {
     });
 
     // Hint: call the function written to do this!
-    xit("unlocks any locked producers which need to be unlocked", function () {
+    it("unlocks any locked producers which need to be unlocked", function () {
       code.renderProducers(data);
       expect(data.producers[0].unlocked).to.be.equal(true);
       expect(data.producers[1].unlocked).to.be.equal(true);
       expect(data.producers[2].unlocked).to.be.equal(false);
     });
 
-    xit("only appends unlocked producers", function () {
+    it("only appends unlocked producers", function () {
       code.renderProducers(data);
       const producerContainer = document.getElementById("producer_container");
       expect(producerContainer.childNodes.length).to.be.equal(2);
       expect(producerContainer.childNodes[0].childNodes).to.have.length(5);
     });
 
-    xit("deletes the producer container's children before appending new producers", function () {
+    it("deletes the producer container's children before appending new producers", function () {
       const producerContainer = document.getElementById("producer_container");
       const fakeProducer = document.createElement("div");
       producerContainer.appendChild(fakeProducer);
@@ -330,7 +330,7 @@ describe("Slice 2: Unlocking & Rendering Producers", function () {
       expect(producerContainer.childNodes[0].childNodes).to.have.length(5);
     });
 
-    xit("is not in some way hardcoded to pass the tests", function () {
+    it("is not in some way hardcoded to pass the tests", function () {
       data.producers.push({ id: "producer_D", price: 1, unlocked: true });
       const producerContainer = document.getElementById("producer_container");
       code.renderProducers(data);
