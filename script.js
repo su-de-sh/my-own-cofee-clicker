@@ -33,7 +33,12 @@ function getUnlockedProducers(data) {
 }
 
 function makeDisplayNameFromId(id) {
-  // your code here
+  return id
+    .split("_")
+    .map(
+      (element) => element[0].toUpperCase() + element.slice(1, element.length)
+    )
+    .join(" ");
 }
 
 // You shouldn't need to edit this function-- its tests should pass once you've written makeDisplayNameFromId

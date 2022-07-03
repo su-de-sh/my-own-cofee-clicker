@@ -179,12 +179,12 @@ describe("Slice 2: Unlocking & Rendering Producers", function () {
   });
 
   describe("The makeDisplayNameFromId function", function () {
-    xit("returns a string", function () {
+    it("returns a string", function () {
       const result = code.makeDisplayNameFromId("input_string");
       expect(result).to.be.a("string");
     });
 
-    xit("transforms its input string from snake_case to Title Case", function () {
+    it("transforms its input string from snake_case to Title Case", function () {
       const testStrings = [
         "input_string",
         "mr._coffee",
