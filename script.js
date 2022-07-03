@@ -63,7 +63,9 @@ function makeProducerDiv(producer) {
 }
 
 function deleteAllChildNodes(parent) {
-  // your code here
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
 }
 
 function renderProducers(data) {
