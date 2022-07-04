@@ -144,6 +144,9 @@ function buyButtonClick(event, data) {
 
 function tick(data) {
   // your code here
+  data.coffee += data.totalCPS;
+  updateCoffeeView(data.coffee);
+  renderProducers(data);
 }
 
 /*************************
