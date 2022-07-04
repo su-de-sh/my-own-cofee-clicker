@@ -106,6 +106,7 @@ function updateCPSView(cps) {
 
 function updatePrice(oldPrice) {
   // your code here
+  return Math.floor(oldPrice * 1.25);
 }
 
 function attemptToBuyProducer(data, producerId) {

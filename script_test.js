@@ -481,12 +481,12 @@ describe("Slice 3: Buying Producers & Tick", function () {
   });
 
   describe("The updatePrice function", function () {
-    xit("returns an integer, not a float", function () {
+    it("returns an integer, not a float", function () {
       const result = code.updatePrice(501);
       expect(result).to.be.a("number");
       expect(result % 1).to.be.equal(0);
     });
-    xit("returns 125% of the input price, rounded down", function () {
+    it("returns 125% of the input price, rounded down", function () {
       const result = code.updatePrice(501);
       expect(result).to.be.equal(626);
     });
