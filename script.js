@@ -111,7 +111,7 @@ function updatePrice(oldPrice) {
 
 function attemptToBuyProducer(data, producerId) {
   // your code here
-  if (data.coffee >= getProducerById(data, producerId).price) {
+  if (canAffordProducer(data, producerId)) {
     getProducerById(data, producerId).qty += 1;
     data.coffee -= getProducerById(data, producerId).price;
     getProducerById(data, producerId).price = updatePrice(
@@ -122,10 +122,24 @@ function attemptToBuyProducer(data, producerId) {
 
     updateCPSView(data.totalCps);
     return true;
-  } else return false;
+  } else {
+    window.alert("Not enough cofee!");
+
+    return false;
+  }
 }
 function buyButtonClick(event, data) {
-  // your code here
+  if (event.target.tagName === "BUTTON") {
+    let producerId = event.target.id.slice(4, event.target.id.length);
+    console.log(producerId);
+
+    let bought = attemptToBuyProducer(data, producerId);
+    if (bought) {
+      renderProducers(data);
+      updateCoffeeView(data.coffee);
+      updateCPSView(data.totalCPS);
+    }
+  }
 }
 
 function tick(data) {
