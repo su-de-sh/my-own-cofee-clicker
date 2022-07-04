@@ -111,8 +111,19 @@ function updatePrice(oldPrice) {
 
 function attemptToBuyProducer(data, producerId) {
   // your code here
-}
+  if (data.coffee >= getProducerById(data, producerId).price) {
+    getProducerById(data, producerId).qty += 1;
+    data.coffee -= getProducerById(data, producerId).price;
+    getProducerById(data, producerId).price = updatePrice(
+      getProducerById(data, producerId).price
+    );
 
+    data.totalCPS += getProducerById(data, producerId).cps;
+
+    updateCPSView(data.totalCps);
+    return true;
+  } else return false;
+}
 function buyButtonClick(event, data) {
   // your code here
 }
