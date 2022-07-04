@@ -458,7 +458,7 @@ describe("Slice 3: Buying Producers & Tick", function () {
       resetJSDOM();
     });
 
-    xit("calls document.getElementById() or document.querySelector()", function () {
+    it("calls document.getElementById() or document.querySelector()", function () {
       const spyOnGetElementById = sinon.spy(document, "getElementById");
       const spyOnQuerySelector = sinon.spy(document, "querySelector");
       code.updateCPSView(100);
@@ -469,7 +469,7 @@ describe("Slice 3: Buying Producers & Tick", function () {
       spyOnQuerySelector.restore();
     });
 
-    xit("updates the total cps indicator to display the current total cps", function () {
+    it("updates the total cps indicator to display the current total cps", function () {
       const cpsIndicator = document.getElementById("cps");
 
       code.updateCPSView(50);

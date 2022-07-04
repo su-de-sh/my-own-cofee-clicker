@@ -100,7 +100,8 @@ function canAffordProducer(data, producerId) {
 }
 
 function updateCPSView(cps) {
-  // your code here
+  let totalCps = document.querySelector("#cps");
+  totalCps.innerText = cps;
 }
 
 function updatePrice(oldPrice) {
