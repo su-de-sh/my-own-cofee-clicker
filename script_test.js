@@ -438,15 +438,15 @@ describe("Slice 3: Buying Producers & Tick", function () {
       };
     });
 
-    xit("returns a boolean", function () {
+    it("returns a boolean", function () {
       const result = code.canAffordProducer(data, "producer_A");
       expect(result).to.be.a("boolean");
     });
-    xit("returns true if the player can afford the producer", function () {
+    it("returns true if the player can afford the producer", function () {
       const result = code.canAffordProducer(data, "producer_A");
       expect(result).to.be.equal(true);
     });
-    xit("returns false if the player cannot afford the producer", function () {
+    it("returns false if the player cannot afford the producer", function () {
       const result = code.canAffordProducer(data, "producer_B");
       expect(result).to.be.equal(false);
     });
