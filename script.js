@@ -87,6 +87,9 @@ function renderProducers(data) {
 
 function getProducerById(data, producerId) {
   // your code here
+  return data.producers.filter((element) => {
+    return element.id === producerId;
+  })[0];
 }
 
 function canAffordProducer(data, producerId) {
